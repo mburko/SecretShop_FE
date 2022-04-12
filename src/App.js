@@ -1,12 +1,13 @@
-import React from "react";
-
+import './App.css';
+import NavBar from './Components/NavBar';
+import{Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
-    <div className = "wrap">
-      <h1>Hello world</h1>
-    </div>
-
-  )
+   <div className='App'>
+     <NavBar></NavBar>
+   </div>
+  );
 }
 
 export default App;
