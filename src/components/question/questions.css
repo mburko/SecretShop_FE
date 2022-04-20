@@ -1,0 +1,24 @@
+.questions_answers {
+    width: 1050px;
+    margin-bottom: 25px;
+    display: inline-block;
+    background-color: #C4C4C4;
+    /*border: 1px solid;*/
+    border-radius: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.all_question {
+    width: 550px;
+}
+
+.question__author {
+    padding-top: 25px;
+}
+
+.answers {
+    /*padding-top: 30px;*/
+    padding-top: 25px;
+    margin-left: 35px;
+}

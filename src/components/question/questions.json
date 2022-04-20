@@ -1,0 +1,121 @@
+[
+  {
+    "authorlogo": "../src/icons/Vector 1.png",
+    "authorname": "Kate",
+    "questiondate" : "15.03.2022",
+    "questiontitle": "MAC Python 3.8 IntelliJ error while importing panda module",
+    "questiontext" : "In my Apple M1 chip machine, trying to import panda module in IntelliJ IDEA. while running this program its giving below error. If I run the same program in command line, it works. Running into this problem while running in the IDE.Any help to resolve this error message?",
+    "questionlooked": "15",
+    "questionlike": "5",
+    "questionunlike": "3",
+    "answers" : [
+      {
+        "answerlogo" :  "../src/icons/Vector 1.png",
+        "answername": "Mary",
+        "answerdate" : "10.04.2022",
+        "answertext" : "from your error message: (mach-o file, but is an incompatible architecture (have 'arm64', need 'x86_64'))\n\nIt's a little ambiguous as it could be interpreted either way round, but I think it means that IntelliJ is running using Rosetta2 in X86 mode, whereas the numpy/pandas installation the python PATH has is your arm version. (The alternative is the reverse of this, but this way round is more likely).\n\nIn order to run your program, you'll need to create a python environment which uses Rosetta2 and installs X86 binaries instead of arm. I've written about how to do this here as a reference for myself. Then IntelliJ should have a setting somewhere to specify the python environment to use for execution and debugging, you should set that environment/PATH to your new X86 environment.",
+        "answerlike": "9",
+        "answerunlike": "1"
+      }
+    ]
+  },
+
+
+  {
+    "authorlogo": "../src/icons/Vector 1.png",
+    "authorname": "Ann",
+    "questiondate" : "13.03.2022",
+    "questiontitle": "How to get URL from element without href attribute?",
+    "questiontext" : "I am trying to get the URL link from an element with get_attribute href mode. However it returns null, like it did not have href.",
+    "questionlooked": "12",
+    "questionlike": "11",
+    "questionunlike": "2",
+    "answers" : [
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Alice",
+        "answerdate": "16.03.2022",
+        "answertext": "This is answer 1",
+        "answerlike": "5",
+        "answerunlike": "1"
+      },
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Bob",
+        "answerdate": "16.03.2022",
+        "answertext": "This is answer 2",
+        "answerlike": "3",
+        "answerunlike": "2"
+      }
+    ]
+  },
+
+
+  {
+    "authorlogo": "../src/icons/Vector 1.png",
+    "authorname": "Ann",
+    "questiondate" : "12.05.2021",
+    "questiontitle": "Question3?",
+    "questiontext" : "Description.",
+    "questionlooked": "750",
+    "questionlike": "511",
+    "questionunlike": "200",
+    "answers" : [
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Alice",
+        "answerdate": "17.04.2022",
+        "answertext": "This is answer 1",
+        "answerlike": "5",
+        "answerunlike": "1"
+      },
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Bob",
+        "answerdate": "11.03.2022",
+        "answertext": "This is answer 2",
+        "answerlike": "7",
+        "answerunlike": "2"
+      },
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Mary",
+        "answerdate": "20.03.2022",
+        "answertext": "This is answer 3",
+        "answerlike": "3",
+        "answerunlike": "10"
+      }
+    ]
+  },
+
+
+  {
+    "authorlogo": "../src/icons/Vector 1.png",
+    "authorname": "Ann",
+    "questiondate" : "12.12.2020",
+    "questiontitle": "Question4?",
+    "questiontext" : "Description.",
+    "questionlooked": "1012",
+    "questionlike": "101",
+    "questionunlike": "27",
+    "answers" : [
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Alice",
+        "answerdate": "16.03.2022",
+        "answertext": "This is answer 1",
+        "answerlike": "5",
+        "answerunlike": "1"
+      },
+      {
+        "answerlogo": "../src/icons/Vector 1.png",
+        "answername": "Bob",
+        "answerdate": "16.03.2022",
+        "answertext": "This is answer 2",
+        "answerlike": "3",
+        "answerunlike": "2"
+      }
+    ]
+  }
+
+]

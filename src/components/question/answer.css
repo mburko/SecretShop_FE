@@ -1,0 +1,72 @@
+.answer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.answer__date {
+    /*position: absolute;
+    width: 188px;
+    height: 22.1px;
+    left: 653px;
+    top: 337.27px;*/
+
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.answer__text {
+    /*position: absolute;
+    width: 1201px;
+    height: 108.49px;
+    left: 585px;
+    top: 426.68px;*/
+
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+}
+
+.answer__stats {
+    width: 100vh;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    /*vertical-align: center;*/
+    margin-right: 15px;
+}
+
+
+.like {
+    display: flex;
+
+}
+.like__text {
+    padding-top: 10px;
+    display: flex;
+}
+.like__text p {
+    padding-right: 5px;
+}
+
+
+.unlike {
+    display: flex;
+    margin-left: 25px;
+}
+.unlike__text {
+    padding-top: 10px;
+    display: flex;
+}
+.unlike__text p {
+    padding-right: 5px;
+}

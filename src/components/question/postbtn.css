@@ -1,0 +1,8 @@
+.postbtn button {
+    padding-top: 10px;
+    margin-right: 10px;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;         /* teal; */
+    border: 0px;
+}
