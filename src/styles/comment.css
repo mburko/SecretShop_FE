@@ -1,0 +1,42 @@
+.coments {
+    margin-right: 15px;
+    display: flex;
+}
+.coments .button-coment{
+    border-color: transparent;
+}
+.number-of-coments {
+    margin-top: 12px;
+    padding-left: 5px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+}
+.button-coment{
+    margin-left: -12px;
+}
+.button-coment .btn-outline-light {
+    border-color: transparent;
+    width: 50px;
+}
+.button-coment .btn-outline-light:hover{
+    background-color: transparent;
+}
+
+.btn-outline-light:focus {
+    box-shadow: none;
+}
+.button-coment .btn:focus {
+   
+    box-shadow: none;
+    
+}
+.button-coment .btn{
+	box-shadow: none !important
+}
+.button-coment .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
