@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/qa_page.css';
-import LS from '../Components/List';
-import Block_qa from '../Components/Question_Answer';
-import H1 from '../Components/h1'
+import '../../styles/qa_page.css';
+import LS from '../../Components/List';
+import Block_qa from '../../Components/Question_Answer';
+import H1 from '../../Components/h1'
 
 function qa_page() {
     return (

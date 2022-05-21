@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button'
 import vector from '../icons/Vector 1.png'
 import Nav from 'react-bootstrap/Nav'
 import '../styles/NavBar.css';
+import {Link} from "react-router-dom";
 
 
 function NavBar() {
@@ -47,50 +48,85 @@ function NavBar() {
         </div>
         <Nav defaultActiveKey="/home" className="flex-column">
           <div className='link'>
-            <Nav.Link eventKey="link-1">
+            <Link to="/">
               <img
-                src={logo}
-                height="30"
-                width="30"
-              />
-              Q&A</Nav.Link>
+                  src={logo}
+                  height="30"
+                  width="30"
+              />Q&A</Link>
+
+            {/*<Nav.Link eventKey="link-1">*/}
+            {/*  <img*/}
+            {/*    src={logo}*/}
+            {/*    height="30"*/}
+            {/*    width="30"*/}
+            {/*  />*/}
+            {/*  Q&A</Nav.Link>*/}
 
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-2">
+            <Link to="/myanswer">
               <img
-                src={answers}
-                height="30"
-                width="30"
+                  src={answers}
+                  height="30"
+                  width="30"
               />
-              My answer</Nav.Link>
+              My answers</Link>
+            {/*<Nav.Link eventKey="link-2">*/}
+            {/*  <img*/}
+            {/*    src={answers}*/}
+            {/*    height="30"*/}
+            {/*    width="30"*/}
+            {/*  />*/}
+            {/*  My answer</Nav.Link>*/}
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-3">
+            <Link to="/notification">
               <img
-                src={notification}
-                height="30"
-                width="30"
+                  src={notification}
+                  height="30"
+                  width="30"
               />
-              Notification</Nav.Link>
+              Notification</Link>
+            {/*<Nav.Link eventKey="link-3">*/}
+            {/*  <img*/}
+            {/*    src={notification}*/}
+            {/*    height="30"*/}
+            {/*    width="30"*/}
+            {/*  />*/}
+            {/*  Notification</Nav.Link>*/}
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-4">
+            <Link to="/following">
               <img
-                src={following}
-                height="30"
-                width="30"
+                  src={following}
+                  height="30"
+                  width="30"
               />
-              Following</Nav.Link>
+              Following</Link>
+            {/*<Nav.Link eventKey="link-4">*/}
+            {/*  <img*/}
+            {/*    src={following}*/}
+            {/*    height="30"*/}
+            {/*    width="30"*/}
+            {/*  />*/}
+            {/*  Following</Nav.Link>*/}
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-5">
+            <Link to="/message">
               <img
-                src={message}
-                height="30"
-                width="30"
+                  src={message}
+                  height="30"
+                  width="30"
               />
-              Message</Nav.Link>
+              Message</Link>
+            {/*<Nav.Link eventKey="link-5">*/}
+            {/*  <img*/}
+            {/*    src={message}*/}
+            {/*    height="30"*/}
+            {/*    width="30"*/}
+            {/*  />*/}
+            {/*  Message</Nav.Link>*/}
           </div>
           <div className='button1'>
             <Button variant="secondary">ASK QUESTION</Button>{' '}
