@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="678b2100-7e54-4ed3-b0af-c4c378007a63" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28koxaMSb7pWtzv9q1FDFagX1Ll" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/SecretShop_FE/src/pages&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\pages" />
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\Components\MAquestion" />
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\icons" />
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\pages\myanswer" />
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\Components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\pages\myanswer" />
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\pages\qa" />
+      <recent name="C:\Users\Administrator\SecretShop_FE\src\pages\registration" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Registration.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/pages/registration/Registration.js" working-dir="$PROJECT_DIR$/src/pages/registration">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Registration.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="678b2100-7e54-4ed3-b0af-c4c378007a63" name="Changes" comment="" />
+      <created>1651770197028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651770197028</updated>
+      <workItem from="1651770200581" duration="2211000" />
+      <workItem from="1651814408878" duration="13923000" />
+      <workItem from="1651913599130" duration="2169000" />
+      <workItem from="1652028789032" duration="308000" />
+      <workItem from="1652029561975" duration="40000" />
+      <workItem from="1652029611377" duration="127000" />
+      <workItem from="1652030646952" duration="605000" />
+      <workItem from="1652041001348" duration="10819000" />
+      <workItem from="1652111877580" duration="3323000" />
+      <workItem from="1652118511991" duration="17555000" />
+      <workItem from="1652385590358" duration="4585000" />
+      <workItem from="1652446679446" duration="16308000" />
+      <workItem from="1652517492490" duration="29000" />
+      <workItem from="1652517720839" duration="4000" />
+      <workItem from="1652675668212" duration="14653000" />
+      <workItem from="1652773314115" duration="876000" />
+      <workItem from="1652778529270" duration="145000" />
+      <workItem from="1652780403780" duration="83000" />
+      <workItem from="1652801273431" duration="1453000" />
+      <workItem from="1652816427122" duration="176000" />
+      <workItem from="1652817139036" duration="35000" />
+      <workItem from="1652817193296" duration="2496000" />
+      <workItem from="1652819777804" duration="14505000" />
+      <workItem from="1652875996121" duration="82000" />
+      <workItem from="1652876368950" duration="15409000" />
+      <workItem from="1652948383317" duration="3269000" />
+      <workItem from="1652957717463" duration="2682000" />
+      <workItem from="1652974832239" duration="2907000" />
+      <workItem from="1653029333221" duration="2676000" />
+      <workItem from="1653054257686" duration="1520000" />
+      <workItem from="1653071384719" duration="316000" />
+      <workItem from="1653071726634" duration="82000" />
+      <workItem from="1653072347721" duration="82000" />
+      <workItem from="1653076847173" duration="9000" />
+      <workItem from="1653077025098" duration="37000" />
+      <workItem from="1653077385181" duration="67000" />
+      <workItem from="1653079580300" duration="1395000" />
+      <workItem from="1653081297355" duration="1368000" />
+      <workItem from="1653082701791" duration="111000" />
+      <workItem from="1653124847299" duration="17810000" />
+      <workItem from="1653302547005" duration="8901000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
