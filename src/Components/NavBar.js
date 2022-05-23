@@ -142,7 +142,9 @@ function NavBar() {
                 />
               </div>
               <div className='name'>
-                <p>Profile name</p>
+                <div className='link'>
+                  <Link to="/profile">Profile</Link>
+                </div>
               </div>
             </div>
             <div id='a1'>

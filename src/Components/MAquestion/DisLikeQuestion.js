@@ -12,10 +12,10 @@ const DisLikeQuestion = (props) => {
     }, []);
 
     function likeQuestion() {
-        console.log('question id');
-        console.log(props.id);
-        console.log('user id');
-        console.log(props.userid);
+        // console.log('question id');
+        // console.log(props.id);
+        // console.log('user id');
+        // console.log(props.userid);
 
         axios({
             method: "POST",
@@ -27,12 +27,12 @@ const DisLikeQuestion = (props) => {
             }
         })
             .then((response) => {
-                console.log('like response');
-                console.log(response);
-                console.log('like response data');
-                console.log(response.data);
-                console.log('like response status');
-                console.log(response.status);
+                // console.log('like response');
+                // console.log(response);
+                // console.log('like response data');
+                // console.log(response.data);
+                // console.log('like response status');
+                // console.log(response.status);
                 if (response.status === 202)
                 {
                     updateQuestionDislikes(props.id);
@@ -41,10 +41,10 @@ const DisLikeQuestion = (props) => {
     }
 
     function dislikeQuestion() {
-        console.log('question id');
-        console.log(props.id);
-        console.log('user id');
-        console.log(props.userid);
+        // console.log('question id');
+        // console.log(props.id);
+        // console.log('user id');
+        // console.log(props.userid);
 
         axios({
             method: "POST",
@@ -55,12 +55,12 @@ const DisLikeQuestion = (props) => {
                 question: props.id
             }
         }).then((response) => {
-            console.log('dislike response');
-            console.log(response);
-            console.log('dislike response data');
-            console.log(response.data);
-            console.log('dislike response status');
-            console.log(response.status);
+            // console.log('dislike response');
+            // console.log(response);
+            // console.log('dislike response data');
+            // console.log(response.data);
+            // console.log('dislike response status');
+            // console.log(response.status);
             if (response.status === 202)
             {
                 updateQuestionDislikes(props.id);
@@ -76,7 +76,7 @@ const DisLikeQuestion = (props) => {
                 const data_dislikes = response.data.number_of_dislikes;
                 setLikes(data_likes);
                 setDislikes(data_dislikes);
-                console.log(response.data);
+                // console.log(response.data);
             })
             .catch((error) => {
                 if (error.response) {

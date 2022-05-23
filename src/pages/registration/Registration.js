@@ -21,71 +21,52 @@ const Registration = () => {
     //     setError('Passwords do not match');
     // }
 
-    function click()
+    function logIn()
     {
-        try{
-            newUserRegistration();
-        }
-        catch (e)
-        {
-            alert(e.response.data.message);
-        }
+        console.log('redirect to log in')
     }
-
-    // function newUserRegistration(e)
-    // {
-    //     e.preventDefault();
-    //     if(password === againPassword){
-    //         try {
-    //             axios({
-    //                 method: "POST",
-    //                 url: "https://mydjangoapp21.herokuapp.com/api/register",
-    //                 data: {
-    //                     email: email,
-    //                     username: username,
-    //                     password: password
-    //                 }
-    //             })
-    //         }
-    //         catch (e)
-    //         {
-    //             alert(e.response.data.message.email)
-    //             console.log(e.response.data.message.email)
-    //         }
-    //     }
-    //     else
-    //     {
-    //         passwordsMatchError();
-    //     }
 
     function newUserRegistration(e)
     {
         e.preventDefault();
         if(password === againPassword){
-            // try {
-                axios.post("https://mydjangoapp21.herokuapp.com/api/register",{
+            try {
+                axios({
+                    method: "POST",
+                    url: 'https://mydjangoapp21.herokuapp.com/api/register',
                     data: {
                         email: email,
                         username: username,
                         password: password
                     }
                 }).then((response) => {
-                    console.log(response.data);
-                    console.log(response.data.email[0]);
-                    setError(response.data.email[0]);
+                    console.log('status');
+                    console.log(response.status);
+                    try
+                    {
+                        if (response.status === 201)
+                        {
+                            setError('Successfully');
+                        }
+                    }
+                    catch (e)
+                    {
+                        console.log(response.data.email);
+                    }
                 })
                     .catch(e)
                 {
-                    console.log('catch response data');
-                    console.log(e.response.data);
-                    setError(e.response);
+                    console.log('catch in post')
+                    console.log(e);
+                    //setError(e.response);
                 }
-            // }
-            // catch (e)
-            // {
-            //     console.log(e)
-            //     //setError(e.response);
-            // }
+            }
+            catch (e)
+            {
+                console.log('catch')
+                console.log(e)
+                //setError(e.response);
+            }
         }
         else
         {
@@ -114,7 +95,7 @@ const Registration = () => {
                         <button>ukr</button>
                     </div>
                     <div className='button__log_in'>
-                        <button>Log in</button>
+                        <button onClick={logIn}>Log in</button>
                     </div>
                 </div>
 

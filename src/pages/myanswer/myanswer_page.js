@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import "./myanswer.css";
-import Question from "../../Components/MAquestion/Question";
 import NavBar from "../../Components/NavBar";
-import vector from "../../icons/Vector 1.png"
 import Answer from "../../Components/MAquestion/Answer";
 import FilterBy from "./FilterBy";
 import Cookies from 'js-cookie';
@@ -12,18 +10,78 @@ const MyanswerPage = () => {
     const myId = 7;
     const myName = 'Anastasia';
 
+    const [username, setUsername] = useState('');
+
     const [authorAnswer, setAuthorAnswer] = useState([]);
     useEffect(() => {
         getAuthorAnswer();
     }, []);
 
+    const[jwt, setJwt] = useState('');
+    useEffect(() => {
+        login();
+    }, []);
+
+    function login(){
+        axios.post('https://mydjangoapp21.herokuapp.com/api/login', {
+            email: 'chaikovska@gmail.com',
+            password: '1234'
+        })
+            .then(function (response) {
+                console.log(response.data);
+                setJwt(response.data.jwt_session);
+            })
+    };
+
+    // function getCookie(name){
+    //     const cookies = document.cookie.split(';');
+    //     for (let i = 0; i < cookies.length; i++) {
+    //         let c = cookies[i].trim().split('=');
+    //         if (c[0] === name) {
+    //             return c[1];
+    //         }
+    //     }
+    //     return "";
+    // }
+
+    // function getCookies(){
+    //     const decodedCookies = decodeURIComponent(document.cookie.split(';'));
+    //     for (let i = 0; i < decodedCookies.length; i++) {
+    //         let c = decodedCookies[i].trim().split('=');
+    //         for (let j = 0; j < c.length; j++)
+    //         {
+    //             console.log(c[j]);
+    //             if (c[j]==='jwt_session')
+    //             {
+    //                 return c[j+1];
+    //             }
+    //         }
+    //     }
+    //     return "";
+    // }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                console.log('ret');
+                console.log(c.substring(name.length, c.length));
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
     function getAuthorAnswer(){
-        axios.defaults.withCredentials = true;
-
-        axios.get("https://mydjangoapp21.herokuapp.com/api/profile", {
+        axios.get("https://mydjangoapp21.herokuapp.com/api/profile/", {
             headers:{
-                "jwt_session": Cookies.get("jwt_session"),
+                "Authorization": Cookies.get("jwt_session"),
             }
         })
             .then((response)=> {
@@ -43,7 +101,6 @@ const MyanswerPage = () => {
 
 
     const [answers, setAnswers] = useState([]);
-
     useEffect(() => {
         getAnswers(myId);
         // getAnswers(authorAnswer.id);
