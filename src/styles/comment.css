@@ -40,3 +40,10 @@
     outline: none;
     box-shadow: none;
   }
+
+.button-add-answer button{
+    border-radius:0% ;
+}
+.photo-button button{
+    border-radius:0% ;
+}

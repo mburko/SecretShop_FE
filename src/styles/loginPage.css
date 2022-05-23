@@ -1,0 +1,192 @@
+.main-loginPage {
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo-block {
+    display: flex;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+
+.dropdown-button-languages .btn-success {
+    background-color: rgba(143, 20, 186, 0.8);
+    border-color: rgba(143, 20, 186, 0.8);
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 0%;
+}
+
+.dropdown-button-languages .btn-success :hover {
+    background-color: rgba(143, 20, 186, 0.8);
+    border-color: rgba(143, 20, 186, 0.8);
+}
+
+.dropdown-button-languages .btn-success:active,
+.show>.btn-success.dropdown-toggle {
+    background-color: rgba(143, 20, 186, 0.8);
+    border-color: rgba(143, 20, 186, 0.8);
+}
+
+.btn-success:active:focus,
+.show>.btn-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(148, 60, 153, 0.5);
+}
+
+.btn-check:focus+.btn-success,
+.btn-success:focus {
+    box-shadow: 0 0 0 0.25rem rgba(148, 60, 153, 0.5);
+}
+
+.name-button-ukr {
+    margin: 0 auto;
+}
+
+.buttons-line {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.buttons-line .btn-success {
+    width: 100px;
+    height: 40px;
+    background-color: rgba(143, 20, 186, 0.8);
+    border-color: rgba(143, 20, 186, 0.8);
+}
+
+.btn-check:focus+.btn-success,
+.btn-success:focus {
+    background-color: rgba(143, 20, 186, 0.8);
+    border-color: rgba(143, 20, 186, 0.8);
+}
+
+.button2-line {
+    margin-left: 10px;
+    margin-right: 3%;
+}
+
+.button2-line .btn {
+    margin: 0 auto;
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 0%;
+}
+
+.info-loginPage {
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.login-block-page {
+    width: 35%;
+    height: 400px;
+    background-color: rgba(161, 116, 176, 0.6);
+    margin-right: 3%;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 15px rgba(143, 20, 186, 0.45);
+
+}
+
+.img-loginPage {
+    margin-left: 3%;
+}
+
+.logo-page-login {
+    width: 100%;
+    font-family: 'MuseoModerno';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 64px;
+    letter-spacing: 0.1em;
+    color: #000000;
+    text-align: center;
+    margin-top: 3%;
+
+
+}
+
+.enter-emails {
+
+    width: 70%;
+    margin: -5% auto;
+}
+
+.enter-password {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.text-email-address {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17x;
+    line-height: 33px;
+}
+
+.enter-emails .form-control {
+    background-color: rgba(231, 192, 245, 1);
+    height: 30px;
+    border-color: rgba(231, 192, 245, 1);
+}
+
+
+.enter-password .form-control {
+    background-color: rgba(231, 192, 245, 1);
+    border-color: rgba(231, 192, 245, 1);
+    height: 30px;
+}
+
+.button-log-in .btn-success {
+    background-color: rgba(143, 20, 186, 0.8);
+    border-color: rgba(143, 20, 186, 0.8);
+    width: 35%;
+    color: #000000;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+
+
+}
+
+.button-log-in {
+    width: 100%;
+}
+
+.center-buttom-log {
+    text-align: center;
+   
+
+
+}
+.or-or{
+    width: 100%;
+    display: flex;
+    font-family: 'Nunito';
+font-style: normal;
+font-weight:bold;
+font-size: 15px;
+justify-content: center;
+
+}
+.line-gmail-facebook{
+display: flex;
+justify-content: space-around;
+}
+.hr1{
+    width: 30%;
+    height: 1px;
+    background-color: #000000;
+}

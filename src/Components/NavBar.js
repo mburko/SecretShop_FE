@@ -13,6 +13,7 @@ import Nav from 'react-bootstrap/Nav'
 import '../styles/NavBar.css';
 
 
+
 function NavBar() {
   return (
     <div className='Navbar'>
@@ -46,8 +47,9 @@ function NavBar() {
        
         </div>
         <Nav defaultActiveKey="/home" className="flex-column">
-          <div className='link'>
-            <Nav.Link eventKey="link-1">
+        <div className='list-nav'>
+        <div className='link'>
+            <Nav.Link href='/nome' eventKey="link-1">
               <img
                 src={logo}
                 height="30"
@@ -57,7 +59,7 @@ function NavBar() {
 
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-2">
+            <Nav.Link href='/answer' eventKey="link-2">
               <img
                 src={answers}
                 height="30"
@@ -66,7 +68,7 @@ function NavBar() {
               My answer</Nav.Link>
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-3">
+            <Nav.Link href='/notification' eventKey="link-3">
               <img
                 src={notification}
                 height="30"
@@ -75,7 +77,7 @@ function NavBar() {
               Notification</Nav.Link>
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-4">
+            <Nav.Link href='/following' eventKey="link-4">
               <img
                 src={following}
                 height="30"
@@ -84,7 +86,7 @@ function NavBar() {
               Following</Nav.Link>
           </div>
           <div className='link'>
-            <Nav.Link eventKey="link-5">
+            <Nav.Link href='/message' eventKey="link-5">
               <img
                 src={message}
                 height="30"
@@ -92,6 +94,8 @@ function NavBar() {
               />
               Message</Nav.Link>
           </div>
+        </div>
+          <div className='box-profile'>
           <div className='button1'>
             <Button variant="secondary">ASK QUESTION</Button>{' '}
           </div>
@@ -117,9 +121,10 @@ function NavBar() {
               />
             </div>
           </div>
+          </div>
         </Nav>
 
-
+     
       </div>
 
 

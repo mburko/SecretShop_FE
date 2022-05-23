@@ -1,0 +1,26 @@
+
+.main-notification{
+    width: 70vw;
+    height: 100vh;
+    margin-top: 10px;
+    margin-left: 5%;
+
+}
+.logo-notification h1{
+    font-weight: 600;
+    color:rgba(0, 0, 0, 1) ;
+    font-family: 'MuseoModerno';
+    font-size: 30px;
+    letter-spacing: 0.15em;
+    margin-left: 15px;
+}
+#list-notification{
+    margin-left: 0px;
+}
+.block_info_notification{
+    width: 100%;
+    height: 100%;
+    margin-top: 1%;
+    overflow: auto;
+    padding-bottom: 15%;
+}
