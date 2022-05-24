@@ -17,10 +17,10 @@ function List() {
                     <Nav.Link href="/home">My question</Nav.Link>
                 </Nav.Item>
                 <NavDropdown title="Filter by" id="nav-dropdown">
-                    <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item  eventKey="4.2">Another action</NavDropdown.Item>
-                    <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
-                    <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.1">Likes</NavDropdown.Item>
+                    <NavDropdown.Item  eventKey="4.2">Comements</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.3">Views</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.4">Dislikes</NavDropdown.Item>
                 </NavDropdown>
             </Nav></div>
         </div>

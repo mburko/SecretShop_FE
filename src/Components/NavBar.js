@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button'
 import vector from '../icons/Vector 1.png'
 import Nav from 'react-bootstrap/Nav'
 import '../styles/NavBar.css';
-import {Link} from "react-router-dom";
+
 
 
 function NavBar() {
@@ -47,87 +47,55 @@ function NavBar() {
        
         </div>
         <Nav defaultActiveKey="/home" className="flex-column">
-          <div className='link'>
-            <Link to="/">
+        <div className='list-nav'>
+        <div className='link'>
+            <Nav.Link href='/nome' eventKey="link-1">
               <img
-                  src={logo}
-                  height="30"
-                  width="30"
-              />Q&A</Link>
-
-            {/*<Nav.Link eventKey="link-1">*/}
-            {/*  <img*/}
-            {/*    src={logo}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Q&A</Nav.Link>*/}
+                src={logo}
+                height="30"
+                width="30"
+              />
+              Q&A</Nav.Link>
 
           </div>
           <div className='link'>
-            <Link to="/myanswer">
+            <Nav.Link href='/answer' eventKey="link-2">
               <img
-                  src={answers}
-                  height="30"
-                  width="30"
+                src={answers}
+                height="30"
+                width="30"
               />
-              My answers</Link>
-            {/*<Nav.Link eventKey="link-2">*/}
-            {/*  <img*/}
-            {/*    src={answers}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  My answer</Nav.Link>*/}
+              My answer</Nav.Link>
           </div>
           <div className='link'>
-            <Link to="/notification">
+            <Nav.Link href='/notification' eventKey="link-3">
               <img
-                  src={notification}
-                  height="30"
-                  width="30"
+                src={notification}
+                height="30"
+                width="30"
               />
-              Notification</Link>
-            {/*<Nav.Link eventKey="link-3">*/}
-            {/*  <img*/}
-            {/*    src={notification}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Notification</Nav.Link>*/}
+              Notification</Nav.Link>
           </div>
           <div className='link'>
-            <Link to="/following">
+            <Nav.Link href='/following' eventKey="link-4">
               <img
-                  src={following}
-                  height="30"
-                  width="30"
+                src={following}
+                height="30"
+                width="30"
               />
-              Following</Link>
-            {/*<Nav.Link eventKey="link-4">*/}
-            {/*  <img*/}
-            {/*    src={following}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Following</Nav.Link>*/}
+              Following</Nav.Link>
           </div>
           <div className='link'>
-            <Link to="/message">
+            <Nav.Link href='/message' eventKey="link-5">
               <img
-                  src={message}
-                  height="30"
-                  width="30"
+                src={message}
+                height="30"
+                width="30"
               />
-              Message</Link>
-            {/*<Nav.Link eventKey="link-5">*/}
-            {/*  <img*/}
-            {/*    src={message}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Message</Nav.Link>*/}
+              Message</Nav.Link>
           </div>
+        </div>
+          <div className='box-profile'>
           <div className='button1'>
             <Button variant="secondary">ASK QUESTION</Button>{' '}
           </div>
@@ -153,9 +121,10 @@ function NavBar() {
               />
             </div>
           </div>
+          </div>
         </Nav>
 
-
+     
       </div>
 
 

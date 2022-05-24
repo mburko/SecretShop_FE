@@ -1,33 +1,17 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
-import ReactDOM from "react-dom/client";
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-} from "react-router-dom";
-import App from "./App";
-import Qa from "./pages/qa/Qa";
-import MyanswerPage from "./pages/myanswer/myanswer_page";
-import NotificationPage from "./pages/notification/notification_page";
-import Following_page from "./pages/following/following_page";
-import FollowingPage from "./pages/following/following_page";
-import MessagePage from "./pages/message/message_page";
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-const root = ReactDOM.createRoot(
-    document.getElementById("root")
-);
-root.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />}>
-                <Route path="/" element={<Qa />} />
-                <Route path="myanswer" element={<MyanswerPage />} />
-                <Route path="notification" element={<NotificationPage />} />
-                <Route path="following" element={<FollowingPage />} />
-                <Route path="message" element={<MessagePage />} />
-            </Route>
-        </Routes>
-    </BrowserRouter>
-);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
