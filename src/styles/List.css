@@ -1,19 +1,38 @@
 .list a {
-    color: rgba(0, 0, 0, 1);
+    color: rgba(143, 20, 186, 1);
     font-family: 'Nunito',cursive;
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 0.15em;
     font-style: normal;
+    /* padding: 0px; */
   
     
 
 }
+.list button  {
+    background-color: transparent;
+    text-align: left;
+    width: 100%;
+    color: rgba(143, 20, 186, 1);
+    font-family: 'Nunito',cursive;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    font-style: normal;
+    border-color: transparent;
+
+}
+.list button:hover{
+    border-color: transparent;
+    background-color: transparent;
+    color:rgba(143, 20, 186, 1);
+}
 .list a:hover{
-    color: rgba(0, 0, 0, 1);
+    color:rgba(143, 20, 186, 1);
 }
 .list a:focus{
-    color: rgba(0, 0, 0, 1);
+    color:rgba(143, 20, 186, 1);
   }
 /* .link-1 a:hover{
     border-bottom:3px solid black ;
@@ -28,7 +47,7 @@
     width: 100%;
     height: 3px;
     border-radius: 5px;
-    background-color:  rgba(0, 0, 0, 1);
+    background-color: rgba(143, 20, 186, 1);
     bottom: 0;
     left: 0;
     transform: scaleX(0);
@@ -41,6 +60,10 @@
     transform: scaleX(1);
   }
   
-.list{
-    margin-left: 7px;
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: rgba(161, 116, 176, 1);
+}
+.nav-item.dropdown {
+    padding-top: 9px;
 }

@@ -1,26 +1,22 @@
-
-.main-notification{
+.main_layot_massage{
     width: 70vw;
     height: 100vh;
     margin-top: 10px;
-    margin-left: 5%;
-
+    margin-left: 4%;
+    margin-right: 5%;
 }
-.logo-notification h1{
+.logo-massage h1{
     font-weight: 600;
     color:rgba(0, 0, 0, 1) ;
     font-family: 'MuseoModerno';
     font-size: 30px;
     letter-spacing: 0.15em;
     margin-left: 15px;
+    margin-top: 2%;
 }
-#list-notification{
-    margin-left: 0px;
-}
-.block_info_notification{
-    width: 100%;
+.info-massage{
+    width: 70vw;
     height: 100%;
-    margin-top: 1%;
     overflow: auto;
     padding-bottom: 15%;
 }

@@ -1,26 +1,16 @@
 import React from 'react';
 import NavBar from "../../Components/NavBar";
 import './notification.css';
+import Notification from './notific';
 
 const NotificationPage = () => {
     return (
-        <div className='page'>
-            <div className='mynavbar'>
-                <NavBar/>
-            </div>
-
-            <div className='page__notification'>
-
-                <div className='header'>
-                    <div className='notification__title'>
-                        <p>Notification</p>
-                    </div>
-
-
-                </div>
-
-            </div>
+        <div className='App'>
+        <div className='main'>
+        <div className='mynavbar'><NavBar></NavBar></div>
+  <Notification></Notification>
         </div>
+      </div>
     );
 };
 

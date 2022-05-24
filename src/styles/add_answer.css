@@ -1,4 +1,23 @@
 .answer{
     width: 100%;
-    margin-right: 15px;
+    padding-bottom: 20px;
+    height: 100px;
+}
+.answer input.form-control{
+    margin-top: 2%;
+    /* width: 300%; */
+    height: 42px;
+    margin-left: 0px;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    border: transparent;
+    /* width: 600px; */
+    width: 100%;
+}
+input.form-control:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-color: #FFFFFF;
+    
 }

@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button'
 import vector from '../icons/Vector 1.png'
 import Nav from 'react-bootstrap/Nav'
 import '../styles/NavBar.css';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function NavBar() {
@@ -39,96 +39,103 @@ function NavBar() {
           </FormControl>
           <div className='button-search'>
             <Button variant="outline-dark">   <img
-            src={search}
-            height="28"
-            width="25"
-          /></Button>
+              src={search}
+              height="28"
+              width="25"
+            /></Button>
           </div>
-       
+
         </div>
         <Nav defaultActiveKey="/home" className="flex-column">
           <div className='link'>
-            <Link to="/">
+            {/* <Link to="/">
               <img
                   src={logo}
                   height="30"
                   width="30"
-              />Q&A</Link>
+              />Q&A</Link> */}
 
-            {/*<Nav.Link eventKey="link-1">*/}
-            {/*  <img*/}
-            {/*    src={logo}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Q&A</Nav.Link>*/}
+            <Nav.Link eventKey="link-1">
+              <Link to="/">
+                <img
+                  src={logo}
+                  height="30"
+                  width="30"
+                />
+                Q&A
+              </Link> </Nav.Link>
 
           </div>
           <div className='link'>
-            <Link to="/myanswer">
+            {/* <Link to="/myanswer">
               <img
                   src={answers}
                   height="30"
                   width="30"
               />
-              My answers</Link>
-            {/*<Nav.Link eventKey="link-2">*/}
-            {/*  <img*/}
-            {/*    src={answers}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  My answer</Nav.Link>*/}
+              My answers</Link> */}
+            <Nav.Link eventKey="link-2">
+              <Link to="/myanswer">
+                <img
+                  src={answers}
+                  height="30"
+                  width="30"
+                />
+                My answer</Link></Nav.Link>
           </div>
           <div className='link'>
-            <Link to="/notification">
+            {/* <Link to="/notification">
               <img
                   src={notification}
                   height="30"
                   width="30"
               />
-              Notification</Link>
-            {/*<Nav.Link eventKey="link-3">*/}
-            {/*  <img*/}
-            {/*    src={notification}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Notification</Nav.Link>*/}
+              Notification</Link> */}
+            <Nav.Link eventKey="link-3">
+            <Link to="/notification">
+              <img
+                src={notification}
+                height="30"
+                width="30"
+              />
+              Notification</Link></Nav.Link>
           </div>
           <div className='link'>
+            {/* <Link to="/following">
+              <img
+                src={following}
+                height="30"
+                width="30"
+              />
+              Following</Link> */}
+            <Nav.Link eventKey="link-4">
             <Link to="/following">
-              <img
-                  src={following}
-                  height="30"
-                  width="30"
+             <img
+               src={following}
+                height="30"
+                width="30"
               />
-              Following</Link>
-            {/*<Nav.Link eventKey="link-4">*/}
-            {/*  <img*/}
-            {/*    src={following}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Following</Nav.Link>*/}
+             Following</Link> </Nav.Link>
           </div>
           <div className='link'>
-            <Link to="/message">
+            {/* <Link to="/message">
               <img
-                  src={message}
-                  height="30"
-                  width="30"
+                src={message}
+                height="30"
+                width="30"
               />
-              Message</Link>
-            {/*<Nav.Link eventKey="link-5">*/}
-            {/*  <img*/}
-            {/*    src={message}*/}
-            {/*    height="30"*/}
-            {/*    width="30"*/}
-            {/*  />*/}
-            {/*  Message</Nav.Link>*/}
+              Message</Link> */}
+            <Nav.Link eventKey="link-5">
+            <Link to="/message">
+             <img
+               src={message}
+                height="30"
+                width="30"
+              />
+              Message</Link></Nav.Link>
           </div>
-          <div className='button1'>
+          <div className='position_navbar_botom'>
+          <div className='button1 button_ask_question'>
             <Button variant="secondary">ASK QUESTION</Button>{' '}
           </div>
           <div className='profile'>
@@ -152,6 +159,7 @@ function NavBar() {
                 width="20"
               />
             </div>
+          </div>
           </div>
         </Nav>
 

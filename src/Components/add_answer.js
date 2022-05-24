@@ -4,7 +4,7 @@ import '../styles/add_answer.css'
 
 function add_answer() {
     return (
-        <div className='main'>
+        <div className='mains'>
             <div className='answer'>
                 <FormControl
                     type='text'

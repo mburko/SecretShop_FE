@@ -10,6 +10,7 @@ import { Outlet, Link } from "react-router-dom";
 import Qa from "./pages/qa/Qa";
 import Quest_tag from "./pages/quest_tag";
 import qa_page from "./pages/qa/qa_page";
+import Login from './pages/loginPage';
 
 export default function App() {
     return (
@@ -25,9 +26,10 @@ export default function App() {
             {/*    <Link to="/myanswer">My answers</Link>*/}
             {/*</nav>*/}
 
-            <NavBar/>
+            {/* <NavBar/> */}
             <qa_page/>
             <Outlet />
+            {/* <Login></Login> */}
         </div>
     );
 }

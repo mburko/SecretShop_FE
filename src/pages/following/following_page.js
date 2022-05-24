@@ -1,27 +1,16 @@
-import React from 'react';
-import NavBar from "../../Components/NavBar";
-import './following.css';
+import React from 'react'
+import NavBar from '../../Components/NavBar'
+import Follow1 from './Follow'
+import './main_follow.css'
+function following() {
+  return (
+    <div className='App'>
+      <div className='main'>
+      <div className='mynavbar'><NavBar></NavBar></div>
+<Follow1></Follow1>
+      </div>
+    </div>
+  )
+}
 
-const FollowingPage = () => {
-    return (
-        <div className='page'>
-            <div className='mynavbar'>
-                <NavBar/>
-            </div>
-
-            <div className='page__following'>
-
-                <div className='header'>
-                    <div className='following__title'>
-                        <p>Following</p>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
-    );
-};
-
-export default FollowingPage;
+export default following
