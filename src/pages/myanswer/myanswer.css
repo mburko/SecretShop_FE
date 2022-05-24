@@ -18,7 +18,7 @@
 }
 
 .header {
-    margin-top: 7%;  /*50px*/
+    margin-top: 7%;
     width: 95%;
 }
 
@@ -67,7 +67,6 @@
     display: flex;
 }
 .myanswer__filter_by p{
-    padding-top: 8px;
     margin: 0;
     
 }
@@ -115,8 +114,8 @@
 
 
 .all_questions {
-    width: 95%;      /*1100px;*/
-    height: 70%;      /*550px;*/
+    width: 95%;
+    height: 70%;
     overflow : auto;
     margin-top: 4%;
 }
@@ -132,8 +131,12 @@
 .MAanswer {
     width: 100%;
     padding: 4%;
+    margin-top: 2%;
     /*background: #A174B099;*/
     border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+
     border-color: #8F14BA;
 }
 

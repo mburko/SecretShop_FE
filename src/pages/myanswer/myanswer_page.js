@@ -1,36 +1,60 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import "./myanswer.css";
-import Question from "../../Components/MAquestion/Question";
 import NavBar from "../../Components/NavBar";
-import vector from "../../icons/Vector 1.png"
 import Answer from "../../Components/MAquestion/Answer";
 import FilterBy from "./FilterBy";
 import Cookies from 'js-cookie';
 
 const MyanswerPage = () => {
-    const myId = 7;
-    const myName = 'Anastasia';
+    // const myId = 7;
+    // const myName = 'Anastasia';
 
     const [authorAnswer, setAuthorAnswer] = useState([]);
+    const [id, setId] = useState([]);
     useEffect(() => {
         getAuthorAnswer();
     }, []);
 
+    function setCookie(cName, cValue, expDays) {
+        let date = new Date();
+        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+        console.log('document.cookie');
+        console.log(document.cookie);
+    }
+    function loginme(){
+        axios.post('https://mydjangoapp21.herokuapp.com/api/login', {
+            email: 'chaikovska@gmail.com',
+            password: '1234'
+        })
+            .then(function (response) {
+                console.log('login response jwt');
+                console.log(response.data.jwt_session);
+                setCookie('jwt_session', response.data.jwt_session, 60);
+                // let date = new Date()
+                // document.cookie='jwt_session='+response.data.jwt_session+'; expires='
+                //     +date.setTime(date.getTime()+60*24*60*60*1000)+'; path=/';
+            })
+    };
+
 
     function getAuthorAnswer(){
         axios.defaults.withCredentials = true;
-
-        axios.get("https://mydjangoapp21.herokuapp.com/api/profile", {
+        // loginme();
+        axios.get("https://mydjangoapp21.herokuapp.com/api/profile/", {
             headers:{
-                "jwt_session": Cookies.get("jwt_session"),
+                "Authorization": Cookies.get("jwt_session"),
             }
         })
             .then((response)=> {
                 const data = response.data;
+                setAuthorAnswer(data);
                 console.log(response.data);
                 console.log('authorAnswer.id');
-                console.log(data.id);
+                console.log(authorAnswer.id);
+                setId(response.data.id)
             })
             .catch((error) => {
                 if (error.response) {
@@ -45,14 +69,21 @@ const MyanswerPage = () => {
     const [answers, setAnswers] = useState([]);
 
     useEffect(() => {
-        getAnswers(myId);
-        // getAnswers(authorAnswer.id);
-    }, []);
+        // getAnswers(myId);
+        // getAuthorAnswer();
+        getAnswers(authorAnswer.id);
+    }, [authorAnswer]);
 
     function getAnswers(authorId){
-        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorId)
+        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorId, {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
             .then((response)=> {
                 const data = response.data
+                console.log('getAnswers')
+                console.log(response.data)
                 setAnswers(data)
             })
             .catch((error) => {
@@ -65,8 +96,12 @@ const MyanswerPage = () => {
     }
 
     function filterByLikes(){
-        // axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorAnswer.id+"&order_by=number_of_likes")
-        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+myId+"&order_by=number_of_likes")
+        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorAnswer.id+"&order_by=number_of_likes", {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
+            // axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+myId+"&order_by=number_of_likes")
             .then((response) => {
                 const data = response.data
                 setAnswers(data);
@@ -81,8 +116,12 @@ const MyanswerPage = () => {
     }
 
     function filterByTime(){
-        // axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorAnswer.id+"&order_by=date_of_publication")
-        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+myId+"&order_by=date_of_publication")
+        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorAnswer.id+"&order_by=date_of_publication", {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
+            // axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+myId+"&order_by=date_of_publication")
             .then((response) => {
                 const data = response.data
                 setAnswers(data)
@@ -97,8 +136,12 @@ const MyanswerPage = () => {
     }
 
     function filterByComments(){
-        // axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorAnswer.id+"&order_by=number_of_comments")
-        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+myId+"&order_by=number_of_comments")
+        axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+authorAnswer.id+"&order_by=number_of_comments", {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
+            // axios.get("https://mydjangoapp21.herokuapp.com/api/answers?author_id="+myId+"&order_by=number_of_comments")
             .then((response) => {
                 const data = response.data
                 setAnswers(data)
@@ -154,13 +197,13 @@ const MyanswerPage = () => {
                 <div className='all_questions'>
                     {
                         answers.length === 0 ? <h3>You haven't answered yet</h3> :
-                        answers.map(answer => <div className='myanswer'>
-                            <Answer key={answer.id} answer_id={answer.id} author_answer_id={myId/*authorAnswer.id*/} author_answer_name={myName/*authorAnswer.username*/}
-                                    question_id={answer.question_id} text_body={answer.text_body}
-                                    date_of_publication={answer.date_of_publication} number_of_likes={answer.number_of_likes}
-                                    number_of_dislikes={answer.number_of_dislikes}
-                            />
-                        </div>)
+                            answers.map(answer => <div className='myanswer'>
+                                <Answer key={answer.id} answer_id={answer.id} author_answer_id={/*myId*/authorAnswer.id} author_answer_name={/*myName*/authorAnswer.username}
+                                        question_id={answer.question_id} text_body={answer.text_body}
+                                        date_of_publication={answer.date_of_publication} number_of_likes={answer.number_of_likes}
+                                        number_of_dislikes={answer.number_of_dislikes}
+                                />
+                            </div>)
                     }
                 </div>
             </div>

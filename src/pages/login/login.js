@@ -1,92 +1,54 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import axios from "axios";
-import './registration.css';
-import community_logo from '../../icons/community 1.svg';
-import gmail from '../../icons/gmail 1.svg';
-import facebook from '../../icons/facebook 1.svg';
+import community_logo from "../../icons/community 1.svg";
+import gmail from "../../icons/gmail 1.svg";
+import facebook from "../../icons/facebook 1.svg";
+import '../registration/registration.css';
+import NavBar from "../../Components/NavBar";
 import {
     useParams,
     useNavigate,
     useLocation,
 } from "react-router-dom";
 
-const Registration = () => {
-    let navigate = useNavigate();
 
+const Login = () => {
+    let navigate = useNavigate();
     const [email, setEmail] = useState();
-    const [username, setUsername] = useState();
     const [password, setPassword] = useState();
-    const [againPassword, setAgainPassword] = useState();
     const [error, setError] = useState('');
 
-    // useEffect(() => {
-    //     newUserRegistration();
-    // }, []);
-
-    // function newUserRegistration(e)
-    // {
-    //     e.preventDefault();
-    //     if(password === againPassword){
-    //         try {
-    //             axios({
-    //                 method: "POST",
-    //                 url: "https://mydjangoapp21.herokuapp.com/api/register",
-    //                 data: {
-    //                     email: email,
-    //                     username: username,
-    //                     password: password
-    //                 }
-    //             })
-    //         }
-    //         catch (e)
-    //         {
-    //             alert(e.response.data.message.email)
-    //             console.log(e.response.data.message.email)
-    //         }
-    //     }
-    //     else
-    //     {
-    //         passwordsMatchError();
-    //     }
-
-    function newUserRegistration(e)
+    function registration()
     {
-        e.preventDefault();
-        if(password === againPassword){
-            // try {
-            axios.post("https://mydjangoapp21.herokuapp.com/api/register",{
-                data: {
-                    email: email,
-                    username: username,
-                    password: password
-                }
-            }).then((response) => {
-                console.log(response.data);
-                console.log(response.data.email[0]);
-                setError(response.data.email[0]);
-            })
-                .catch(e)
-            {
-                console.log('catch response data');
-                console.log(e.response.data);
-                setError(e.response);
-            }
-            // }
-            // catch (e)
-            // {
-            //     console.log(e)
-            //     //setError(e.response);
-            // }
-        }
-        else
-        {
-            setError('Passwords do not match')
-        }
-
+        navigate("/registration");
     }
 
-    function login(){
-        navigate("/login");
+    ////
+    function setCookie(cName, cValue, expDays) {
+        let date = new Date();
+        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+        console.log('document.cookie');
+        console.log(document.cookie);
+    }
+    function loginme(){
+        axios.post('https://mydjangoapp21.herokuapp.com/api/login', {
+            email: 'chaikovska@gmail.com',
+            password: '1234'
+        })
+            .then(function (response) {
+                console.log('login response jwt');
+                console.log(response.data.jwt_session);
+                setCookie('jwt_session', response.data.jwt_session, 60);
+            })
+    };
+
+    function login()
+    {
+        //
+        loginme();
+        navigate("/");
     }
 
     return (
@@ -109,7 +71,7 @@ const Registration = () => {
                         <button>ukr</button>
                     </div>
                     <div className='button__log_in'>
-                        <button onClick={login}>Log in</button>
+                        <button onClick={registration}>Register</button>
                     </div>
                 </div>
 
@@ -129,27 +91,11 @@ const Registration = () => {
                                     type='email'
                                 />
                             </div>
-                            <div className='registration__username'>
-                                <p>Enter your username</p>
-                                <input
-                                    value={username}
-                                    onChange={e => setUsername(e.target.value)}
-                                    type='text'
-                                />
-                            </div>
                             <div className='registration__password'>
                                 <p>Enter your password</p>
                                 <input
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
-                                    type='password'
-                                />
-                            </div>
-                            <div className='registration__password'>
-                                <p>Enter your password again</p>
-                                <input
-                                    value={againPassword}
-                                    onChange={e => setAgainPassword(e.target.value)}
                                     type='password'
                                 />
                             </div>
@@ -159,7 +105,7 @@ const Registration = () => {
                             </div>
 
                             <div className='sign_up__button'>
-                                <button onClick={newUserRegistration}>Sign up</button>
+                                <button onClick={login}>Sign up</button>
                             </div>
 
                             <div className='sign_up_with'>
@@ -190,4 +136,4 @@ const Registration = () => {
     );
 };
 
-export default Registration;
+export default Login;

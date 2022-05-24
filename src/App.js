@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import NavBar from './Components/NavBar';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,26 +10,33 @@ import { Outlet, Link } from "react-router-dom";
 import Qa from "./pages/qa/Qa";
 import Quest_tag from "./pages/quest_tag";
 import qa_page from "./pages/qa/qa_page";
-import Login from './pages/loginPage';
 
 export default function App() {
-    return (
-        <div>
-            {/*<h1>Bookkeeper 20.05</h1>*/}
-            {/*<nav*/}
-            {/*    style={{*/}
-            {/*        borderBottom: "solid 1px",*/}
-            {/*        paddingBottom: "1rem",*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*    <Link to="/qa">Q&A</Link> |{" "}*/}
-            {/*    <Link to="/myanswer">My answers</Link>*/}
-            {/*</nav>*/}
+    const [isAuth, setIsAuth] = useState(true);
+    useEffect(() => {
+        isAuthenticated();
+    }, []);
 
-            {/* <NavBar/> */}
-            <qa_page/>
-            <Outlet />
-            {/* <Login></Login> */}
-        </div>
+    function isAuthenticated(){
+
+    }
+
+    function page()
+    {
+        if (isAuth === true) {
+            return <div>
+                <NavBar/>
+                <Outlet/>
+            </div>
+        }
+        else {
+            return <div>
+                <Registration/>
+            </div>
+        }
+    }
+
+    return (
+        page()
     );
 }
