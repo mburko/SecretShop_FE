@@ -6,8 +6,8 @@ import "./question.css";
 import '../../pages/myanswer/myanswer.css';
 import axios from "axios";
 import Tag from "./Tag";
-import DisLikePost from "./DisLikePost";
 import DisLikeQuestion from "./DisLikeQuestion";
+import Cookies from "js-cookie";
 
 const Question = (props) => {
     const [author, setAuthor] = useState([]);
@@ -17,11 +17,18 @@ const Question = (props) => {
     }, []);
 
     function getAuthor(authorId) {
-        axios.get("https://mydjangoapp21.herokuapp.com/api/users/"+authorId)
+        console.log('props author id');
+        console.log(props.author_id);
+        axios.get("https://mydjangoapp21.herokuapp.com/api/users/"+authorId, {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
             .then((response)=> {
                 const data = response.data;
                 setAuthor(data);
-                // console.log(response.data);
+                // console.log('question author id');
+                // console.log(response.data.id);
             })
             .catch((error) => {
                 if (error.response) {
@@ -52,10 +59,9 @@ const Question = (props) => {
 
             <div className='question__tags'>
                 {
-                    //props.tags.length === 0 ? " no tags " :
-                        props.tags.map(tag =><div className='tag'>
-                            <Tag tag_id={tag} />
-                        </div>)
+                    props.tags.map(tag =><div className='tag'>
+                        <Tag tag_id={tag} />
+                    </div>)
                 }
             </div>
 
@@ -78,8 +84,6 @@ const Question = (props) => {
                     <div className='like_dislike'>
                         <DisLikeQuestion id={props.question_id} userid={author.id}
                                          likes={props.number_of_likes} dislikes={props.number_of_dislikes}/>
-                        {/*<DisLikePost post='question' id={props.question_id} url='https://mydjangoapp21.herokuapp.com/api/question_react'*/}
-                        {/*             userid={author.id} likes={props.number_of_likes} dislikes={props.number_of_dislikes}/>*/}
                     </div>
                 </div>
 

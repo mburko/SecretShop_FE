@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import like from "../../icons/like 1 (1).png";
 import dislike from "../../icons/unlike 1.png";
+import Cookies from "js-cookie";
 
 const DisLikeQuestion = (props) => {
     const [likes, setLikes] = useState(props.likes);
@@ -24,6 +25,9 @@ const DisLikeQuestion = (props) => {
                 reaction_type: 1,
                 user: props.userid,
                 question: props.id
+            },
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
             }
         })
             .then((response) => {
@@ -53,6 +57,9 @@ const DisLikeQuestion = (props) => {
                 reaction_type: 0,
                 user: props.userid,
                 question: props.id
+            },
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
             }
         }).then((response) => {
             console.log('dislike response');
@@ -70,7 +77,11 @@ const DisLikeQuestion = (props) => {
 
     function updateQuestionDislikes(questionId)
     {
-        axios.get("https://mydjangoapp21.herokuapp.com/api/questions/"+questionId)
+        axios.get("https://mydjangoapp21.herokuapp.com/api/questions/"+questionId, {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
             .then((response)=> {
                 const data_likes = response.data.number_of_likes;
                 const data_dislikes = response.data.number_of_dislikes;

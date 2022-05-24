@@ -25,7 +25,9 @@ body {
 .info-list {
     margin-left: -25px;
 }
-
+/* .info-list {
+    margin-left: -25px;
+} */
 /* ::-webkit-scrollbar {
     width: 15px;
 
