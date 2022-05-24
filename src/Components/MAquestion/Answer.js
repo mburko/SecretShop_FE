@@ -3,8 +3,8 @@ import axios from "axios";
 import Question from "./Question";
 import './question.css';
 import './answer.css';
-import DisLikePost from "./DisLikePost";
 import DisLikeAnswer from "./DisLikeAnswer";
+import Cookies from "js-cookie";
 
 const Answer = (props) => {
     const [question, setQuestion] = useState([]);
@@ -15,7 +15,11 @@ const Answer = (props) => {
     }, []);
 
     function getQuestion(questionId) {
-        axios.get("https://mydjangoapp21.herokuapp.com/api/questions/"+questionId)
+        axios.get("https://mydjangoapp21.herokuapp.com/api/questions/"+questionId, {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
             .then((response)=> {
                 const data = response.data
                 setQuestion(data)
@@ -51,8 +55,6 @@ const Answer = (props) => {
                     <div className='looked_like_unlike'>
                         <DisLikeAnswer id={props.answer_id} userid={props.author_answer_id}
                                        likes={props.number_of_likes} dislikes={props.number_of_dislikes}/>
-                        {/*<DisLikePost post='answer' id={props.answer_id} url='https://mydjangoapp21.herokuapp.com/api/answer_react'*/}
-                        {/*             userid={props.author_answer_id} likes={props.number_of_likes} dislikes={props.number_of_dislikes}/>*/}
                     </div>
                 </div>
             </div>

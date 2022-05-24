@@ -107,24 +107,26 @@
     width: 100%;
 }
 
-.email p {
+.registration__email p {
     margin: 0;
 }
-.username p {
+.registration__username p {
     margin: 0;
 }
-.password p {
+.registration__password p {
     margin: 0;
 }
 
 .sign_up__button {
     width: fit-content;
+    /*margin: auto;*/
     margin: 3% auto 3% auto;
     justify-content: center;
 }
 .sign_up__button button {
     /*margin-left: auto;*/
     /*justify-content: center;*/
+    width: fit-content;
 
     font-family: 'Nunito', sans-serif;
     font-style: normal;

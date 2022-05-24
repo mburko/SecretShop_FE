@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const Tag = (props) => {
     const [tag, setTag] = useState([])
@@ -9,7 +10,11 @@ const Tag = (props) => {
     }, []);
 
     function getTag(tagId) {
-        axios.get("https://mydjangoapp21.herokuapp.com/api/tags/"+tagId)
+        axios.get("https://mydjangoapp21.herokuapp.com/api/tags/"+tagId, {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
             .then((response)=> {
                 const data = response.data;
                 setTag(data);

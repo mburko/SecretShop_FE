@@ -98,17 +98,18 @@
 }
 
 .profile__number {
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .profile__email {
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .profile__statistic{
     display: flex;
 }
-.statistic {
+.pr_statistic {
+    margin-top: 0;
     margin-right: 11%;
     display: flex;
     justify-content: space-between;

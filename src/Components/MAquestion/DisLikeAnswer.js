@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import like from "../../icons/like 1 (1).png";
 import dislike from "../../icons/unlike 1.png";
+import Cookies from "js-cookie";
 
 const DisLikeAnswer = (props) => {
     const [likes, setLikes] = useState(props.likes);
@@ -12,10 +13,10 @@ const DisLikeAnswer = (props) => {
     }, []);
 
     function likeAnswer() {
-        // console.log('answer id');
-        // console.log(props.id);
-        // console.log('user id');
-        // console.log(props.userid);
+        console.log('answer id');
+        console.log(props.id);
+        console.log('user id');
+        console.log(props.userid);
 
         axios({
             method: "POST",
@@ -24,15 +25,18 @@ const DisLikeAnswer = (props) => {
                 reaction_type: 1,
                 user: props.userid,
                 answer: props.id
+            },
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
             }
         })
             .then((response) => {
-                // console.log('like response');
-                // console.log(response);
-                // console.log('like response data');
-                // console.log(response.data);
-                // console.log('like response status');
-                // console.log(response.status);
+                console.log('like response');
+                console.log(response);
+                console.log('like response data');
+                console.log(response.data);
+                console.log('like response status');
+                console.log(response.status);
                 if (response.status === 202)
                 {
                     updateAnswerDislikes(props.id);
@@ -41,10 +45,10 @@ const DisLikeAnswer = (props) => {
     }
 
     function dislikeAnswer() {
-        // console.log('question id');
-        // console.log(props.id);
-        // console.log('user id');
-        // console.log(props.userid);
+        console.log('question id');
+        console.log(props.id);
+        console.log('user id');
+        console.log(props.userid);
 
         axios({
             method: "POST",
@@ -53,14 +57,17 @@ const DisLikeAnswer = (props) => {
                 reaction_type: 0,
                 user: props.userid,
                 answer: props.id
+            },
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
             }
         }).then((response) => {
-            // console.log('dislike response');
-            // console.log(response);
-            // console.log('dislike response data');
-            // console.log(response.data);
-            // console.log('dislike response status');
-            // console.log(response.status);
+            console.log('dislike response');
+            console.log(response);
+            console.log('dislike response data');
+            console.log(response.data);
+            console.log('dislike response status');
+            console.log(response.status);
             if (response.status === 202)
             {
                 updateAnswerDislikes(props.id);
@@ -70,13 +77,17 @@ const DisLikeAnswer = (props) => {
 
     function updateAnswerDislikes(answerId)
     {
-        axios.get("https://mydjangoapp21.herokuapp.com/api/answers/"+answerId)
+        axios.get("https://mydjangoapp21.herokuapp.com/api/answers/"+answerId, {
+            headers:{
+                "Authorization": Cookies.get("jwt_session"),
+            }
+        })
             .then((response)=> {
                 const data_likes = response.data.number_of_likes;
                 const data_dislikes = response.data.number_of_dislikes;
                 setLikes(data_likes);
                 setDislikes(data_dislikes);
-                // console.log(response.data);
+                console.log(response.data);
             })
             .catch((error) => {
                 if (error.response) {
