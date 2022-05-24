@@ -12,15 +12,15 @@ function App() {
   return (
     <div className='App'>
       <div className='main'>
-        {/* <NavBar></NavBar>
-        <QA></QA> */}
+        <NavBar></NavBar>
+        <QA></QA>
         {/* <LoginPage></LoginPage> */}
         {/* <NavBar></NavBar>
         <Notification></Notification> */}
         {/* <NavBar></NavBar>
         <Following></Following> */}
-        <NavBar></NavBar>
-        <LayotMassage></LayotMassage>
+        {/* <NavBar></NavBar>
+        <LayotMassage></LayotMassage> */}
         
 
       </div>
