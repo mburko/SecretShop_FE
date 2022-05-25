@@ -18,136 +18,13 @@ import Registration from "./pages/registration/Registration";
 import Cookies from "js-cookie";
 import AuthMenu from "./Components/authMenu";
 import Menu from "./Components/menu";
-
+import LoginPage from "./pages/loginPage";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root")
 );
 
-// const [isAuth, setIsAuth] = useState(false);
-// useEffect(() => {
-//     isAuthenticated();
-// }, []);
-
-function isAuthenticated(){
-    if (Cookies.get("jwt_session") !== undefined)
-    {
-        //setIsAuth(true);
-        return <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />}>
-                    <Route path="/" element={<Qa />} />
-                    <Route path="myanswer" element={<MyanswerPage />} />
-                    <Route path="notification" element={<NotificationPage />} />
-                    <Route path="following" element={<FollowingPage />} />
-                    <Route path="message" element={<MessagePage />} />
-                    <Route path="profile" element={<Profile/>} />
-
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    }
-    else {
-        //setIsAuth(false);
-        return <BrowserRouter>
-            <Routes>
-                <Route>
-                    <Route path="login" element={<Login/>} />
-                    <Route path="registration" element={<Registration/>} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    }
-    // try{
-    //     Cookies.get("jwt_session");
-    //     console.log('Cookies.get("jwt_session");');
-    //     console.log(Cookies.get("jwt_session") !== undefined);
-    //     isAuth = true;
-    //     return <BrowserRouter>
-    //         <Routes>
-    //             <Route path="/" element={<App />}>
-    //                 <Route path="/" element={<Qa />} />
-    //                 <Route path="myanswer" element={<MyanswerPage />} />
-    //                 <Route path="notification" element={<NotificationPage />} />
-    //                 <Route path="following" element={<FollowingPage />} />
-    //                 <Route path="message" element={<MessagePage />} />
-    //                 <Route path="profile" element={<Profile/>} />
-    //
-    //             </Route>
-    //         </Routes>
-    //     </BrowserRouter>
-    // }
-    // catch (error){
-    //     isAuth = false;
-    //     return <BrowserRouter>
-    //         <Routes>
-    //             <Route>
-    //                 <Route path="login" element={<Login/>} />
-    //                 <Route path="registration" element={<Registration/>} />
-    //             </Route>
-    //         </Routes>
-    //     </BrowserRouter>
-    // }
-}
-
-// const [jwt, setJwt] = useState('');
-//
-// useEffect(() => {
-//     checkJwt();
-// }, []);
-//
-// function checkJwt()
-// {
-//     if (Cookies.get("jwt_session") !== undefined)
-//     {
-//         setJwt('1');
-//     }
-//     else {
-//         setJwt('0');
-//     }
-// }
-//
-// function page()
-// {
-//     if (jwt === '1')
-//     {
-//         return <BrowserRouter>
-//             <Routes>
-//                 <Route path="/" element={<App />}>
-//                     <Route path="/" element={<Qa />} />
-//                     <Route path="myanswer" element={<MyanswerPage />} />
-//                     <Route path="notification" element={<NotificationPage />} />
-//                     <Route path="following" element={<FollowingPage />} />
-//                     <Route path="message" element={<MessagePage />} />
-//                     <Route path="profile" element={<Profile/>} />
-//
-//                 </Route>
-//             </Routes>
-//         </BrowserRouter>
-//     }
-//     else {
-//         return <BrowserRouter>
-//                      <Routes>
-//                          <Route path="login" element={<Login/>} />
-//                          <Route exact path="registration" element={<Registration/>} />
-//                      </Routes>
-//         </BrowserRouter>
-//     }
-// }
-
-function page(){
-    if(Cookies.get("jwt_session") !== undefined)
-    {
-        return <AuthMenu/>
-    }
-    else{
-        return <Menu/>
-    }
-}
-
 root.render(
-    //page()
-
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
@@ -157,16 +34,11 @@ root.render(
                 <Route path="following" element={<FollowingPage />} />
                 <Route path="message" element={<MessagePage />} />
                 <Route path="profile" element={<Profile/>} />
-
             </Route>
-        </Routes>
-        <Routes>
             <Route>
-                <Route path="login" element={<Login/>} />
                 <Route path="registration" element={<Registration/>} />
+                <Route path="login" element={<Login/>} />
             </Route>
         </Routes>
     </BrowserRouter>
-
-    //isAuthenticated()
 );

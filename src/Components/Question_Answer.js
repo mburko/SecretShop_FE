@@ -5,7 +5,6 @@ import Unsave from '../Components/unsave'
 import Share from '../Components/shape'
 import Answer from '../Components/add_answer'
 
-
 import comment from '../icons/comment 1.png'
 import '../styles/comment.css'
 import Button from 'react-bootstrap/Button'
@@ -17,6 +16,7 @@ import axios from 'axios'
 // import React from 'react'
 
 export default function Question_Answer(props) {
+
   const [author, setAuthor] = useState([]);
     useEffect(() => {
         console.log(props.author_id);
@@ -69,17 +69,12 @@ export default function Question_Answer(props) {
                     <div className='question_n'>
                         <div className='name_question'>
                             {
-                              
                                    <p>
-                                     {
+                                       {
                                        props.title
                                      }
-
-                                     </p>
-                            
+                                   </p>
                             }
-      
-                           
                         </div>
                         <div className='text_question'>
                             <p>
@@ -173,22 +168,6 @@ export default function Question_Answer(props) {
                         <div className='answer-text'>
                                 <Answer></Answer>
                             </div>
-                            {/* <div className='flexion '> */}
-                            
-                            {/* <div className='icons-answer'>
-                            <div className='button-add-answer'>
-                              <div className='button-search'>
-                                 <Button variant="outline-dark">   <img
-                                 src={smile1}
-                                 height="28"
-                                 width="25"/></Button>
-                                  </div>
-                                  </div>
-                            </div>
-                                <Photo></Photo>
-                                <Picture></Picture> */}
-                            {/* </div> */}
-                        {/* </div> */}
                         
                     </div>
                 </div>

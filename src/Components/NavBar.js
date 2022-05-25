@@ -38,7 +38,8 @@ function NavBar() {
 
           </FormControl>
           <div className='button-search'>
-            <Button variant="outline-dark">   <img
+            <Button variant="outline-dark">
+              <img
               src={search}
               height="28"
               width="25"
@@ -149,7 +150,7 @@ function NavBar() {
                 />
               </div>
               <div className='name'>
-                <p>Profile name</p>
+                <Link to="/profile">Profile</Link>
               </div>
             </div>
             <div id='a1'>

@@ -54,8 +54,17 @@ const Profile = () => {
             })
     };
 
+    function setCookie(cName, cValue, expDays) {
+        let date = new Date();
+        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+        console.log('document.cookie');
+        console.log(document.cookie);
+    }
     function logout(){
-        document.cookie = "jwt_session= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+        setCookie('jwt_session', '', 1);
+        //document.cookie = "jwt_session= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
         navigate("/login");
     }
 
@@ -117,7 +126,7 @@ const Profile = () => {
     function getFollow()
     {
         // followed
-        axios.get("https://mydjangoapp21.herokuapp.com/api/myfollow/"+authorAnswer.id+"follow_type=0", {
+        axios.get("https://mydjangoapp21.herokuapp.com/api/myfollow/"+authorAnswer.id+"/follow_type=0", {
             headers:{
                 "Authorization": Cookies.get("jwt_session"),
             }
@@ -137,7 +146,7 @@ const Profile = () => {
                 }
             })
         // following
-        axios.get("https://mydjangoapp21.herokuapp.com/api/myfollow/"+authorAnswer.id+"follow_type=1", {
+        axios.get("https://mydjangoapp21.herokuapp.com/api/myfollow/"+authorAnswer.id+"/follow_type=1", {
             headers:{
                 "Authorization": Cookies.get("jwt_session"),
             }

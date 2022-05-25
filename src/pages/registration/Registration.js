@@ -9,6 +9,7 @@ import {
     useNavigate,
     useLocation,
 } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Registration = () => {
     let navigate = useNavigate();
@@ -19,57 +20,36 @@ const Registration = () => {
     const [againPassword, setAgainPassword] = useState();
     const [error, setError] = useState('');
 
-    // useEffect(() => {
-    //     newUserRegistration();
-    // }, []);
-
-    // function newUserRegistration(e)
-    // {
-    //     e.preventDefault();
-    //     if(password === againPassword){
-    //         try {
-    //             axios({
-    //                 method: "POST",
-    //                 url: "https://mydjangoapp21.herokuapp.com/api/register",
-    //                 data: {
-    //                     email: email,
-    //                     username: username,
-    //                     password: password
-    //                 }
-    //             })
-    //         }
-    //         catch (e)
-    //         {
-    //             alert(e.response.data.message.email)
-    //             console.log(e.response.data.message.email)
-    //         }
-    //     }
-    //     else
-    //     {
-    //         passwordsMatchError();
-    //     }
-
     function newUserRegistration(e)
     {
         e.preventDefault();
         if(password === againPassword){
             // try {
-            axios.post("https://mydjangoapp21.herokuapp.com/api/register",{
+            axios({
+                method: "POST",
+                url: 'https://mydjangoapp21.herokuapp.com/api/register',
                 data: {
                     email: email,
                     username: username,
                     password: password
                 }
             }).then((response) => {
-                console.log(response.data);
-                console.log(response.data.email[0]);
-                setError(response.data.email[0]);
+                // console.log('reg status');
+                // console.log(response.status);
+                // console.log(response.data);
+                //console.log(response.data.email[0]);
+                //setError(response.data.email[0]);
+                if (response.status === 201)
+                {
+                    // navigate("/login");
+                    setError('Sucessfully')
+                }
             })
                 .catch(e)
             {
-                console.log('catch response data');
-                console.log(e.response.data);
-                setError(e.response);
+                console.log('catch response ');
+                console.log(e);
+                //setError(e.response);
             }
             // }
             // catch (e)

@@ -10,28 +10,23 @@ import { Outlet, Link } from "react-router-dom";
 import Qa from "./pages/qa/Qa";
 import Quest_tag from "./pages/quest_tag";
 import qa_page from "./pages/qa/qa_page";
+import Cookies from 'js-cookie';
 
 export default function App() {
-    const [isAuth, setIsAuth] = useState(true);
-    useEffect(() => {
-        isAuthenticated();
-    }, []);
 
-    function isAuthenticated(){
-
-    }
-
-    function page()
-    {
-        if (isAuth === true) {
+    function page(){
+        if (Cookies.get("jwt_session") !== undefined)
+        {
             return <div>
-                <NavBar/>
+                <qa_page/>
+                {/*<NavBar/>*/}
                 <Outlet/>
             </div>
         }
         else {
             return <div>
                 <Registration/>
+                <Outlet/>
             </div>
         }
     }

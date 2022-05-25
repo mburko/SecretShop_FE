@@ -1,6 +1,6 @@
-body {
-    overflow: hidden;
-}
+/*body {*/
+/*    overflow: hidden;*/
+/*}*/
 
 .info1 {
     margin-top: 10px;
@@ -9,10 +9,10 @@ body {
     margin-right: 5%;
 }
 
-body {
-    background-color: rgba(231, 192, 245, 1);
-    width: 100vw;
-}
+/*body {*/
+/*    background-color: rgba(231, 192, 245, 1);*/
+/*    width: 100vw;*/
+/*}*/
 
 .block {
     width: 100%;
@@ -25,6 +25,13 @@ body {
 .info-list {
     margin-left: -25px;
 }
+
+.all_questions1{
+    height: 600px;
+    overflow: auto;
+    margin-left: 20px;
+}
+
 /* .info-list {
     margin-left: -25px;
 } */

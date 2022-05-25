@@ -7,9 +7,11 @@ const Qa = () => {
     return (
         <div className='App'>
             <div className='main'>
-                <div className='mynavbar'><NavBar></NavBar></div>
-                <QA></QA>
-            </div>
+                <div className='mynavbar'>
+                    <NavBar/>
+                </div>
+                    <QA/>
+                </div>
         </div>
     );
 };

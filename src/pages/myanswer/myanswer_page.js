@@ -16,33 +16,32 @@ const MyanswerPage = () => {
         getAuthorAnswer();
     }, []);
 
-    function setCookie(cName, cValue, expDays) {
-        let date = new Date();
-        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
-        console.log('document.cookie');
-        console.log(document.cookie);
-    }
-    function loginme(){
-        axios.post('https://mydjangoapp21.herokuapp.com/api/login', {
-            email: 'chaikovska@gmail.com',
-            password: '1234'
-        })
-            .then(function (response) {
-                console.log('login response jwt');
-                console.log(response.data.jwt_session);
-                setCookie('jwt_session', response.data.jwt_session, 60);
-                // let date = new Date()
-                // document.cookie='jwt_session='+response.data.jwt_session+'; expires='
-                //     +date.setTime(date.getTime()+60*24*60*60*1000)+'; path=/';
-            })
-    };
-
+    // function setCookie(cName, cValue, expDays) {
+    //     let date = new Date();
+    //     date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+    //     const expires = "expires=" + date.toUTCString();
+    //     document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    //     console.log('document.cookie');
+    //     console.log(document.cookie);
+    // }
+    // function loginme(){
+    //     axios.post('https://mydjangoapp21.herokuapp.com/api/login', {
+    //         email: 'chaikovska@gmail.com',
+    //         password: '1234'
+    //     })
+    //         .then(function (response) {
+    //             console.log('login response jwt');
+    //             console.log(response.data.jwt_session);
+    //             setCookie('jwt_session', response.data.jwt_session, 60);
+    //             // let date = new Date()
+    //             // document.cookie='jwt_session='+response.data.jwt_session+'; expires='
+    //             //     +date.setTime(date.getTime()+60*24*60*60*1000)+'; path=/';
+    //         })
+    // };
 
     function getAuthorAnswer(){
-        axios.defaults.withCredentials = true;
-        // loginme();
+        //axios.defaults.withCredentials = true;
+        //loginme();
         axios.get("https://mydjangoapp21.herokuapp.com/api/profile/", {
             headers:{
                 "Authorization": Cookies.get("jwt_session"),
@@ -51,10 +50,10 @@ const MyanswerPage = () => {
             .then((response)=> {
                 const data = response.data;
                 setAuthorAnswer(data);
-                console.log(response.data);
-                console.log('authorAnswer.id');
-                console.log(authorAnswer.id);
-                setId(response.data.id)
+                // console.log(response.data);
+                // console.log('authorAnswer.id');
+                // console.log(authorAnswer.id);
+                // setId(response.data.id)
             })
             .catch((error) => {
                 if (error.response) {

@@ -9,10 +9,14 @@
     padding: 0;
   }
   .main{
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background-color: #E7C0F5;
   }
-  
+
+  .mynavbar{
+      width: 23%;
+      background-color: #E7C0F5;
+  }

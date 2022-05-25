@@ -1,27 +1,31 @@
 .main-following{
-    width: 100%;
-    
-  }
-  .logo-following h1{
+      margin-left: 2%;
+      width: 75%;
+      background-color: #E7C0F5;
+}
+
+.logo-following h1{
       padding-top: 3%;
       font-weight: 600;
       color:rgba(0, 0, 0, 1) ;
-      font-family: 'MuseoModerno';
+      font-family: 'MuseoModerno', sans-serif;
       font-size: 30px;
       letter-spacing: 0.15em;
       margin-left: 5%;
       margin-bottom: 2%;
-  }
-  .info-following{
+}
+
+.info-following{
       display: flex;
       justify-content: space-evenly;
       margin-bottom: 3%;
-  }
-  .block-overflow-following{
+}
+
+.block-overflow-following{
       width: 100%;
       height: 90vh;
       overflow:auto;
       margin-right: 10%;
       
-  }
+}
 

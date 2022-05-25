@@ -7,8 +7,10 @@ const NotificationPage = () => {
     return (
         <div className='App'>
         <div className='main'>
-        <div className='mynavbar'><NavBar></NavBar></div>
-  <Notification></Notification>
+        <div className='mynavbar'>
+            <NavBar></NavBar>
+        </div>
+            <Notification></Notification>
         </div>
       </div>
     );

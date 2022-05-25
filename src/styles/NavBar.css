@@ -19,19 +19,18 @@ body{
   display: flex;
   /* margin-left: 25px; */
   margin-top: 25px;
-  
 }
 
 .logo_name{
   width: 182px;
   height: 51px;
 }
+
 .logo_name p{
 font-family: 'MuseoModerno', cursive;
-font-weight: 700, Bold;
+font-weight: 700;
 font-size: 20px;
 line-height: 51px;
-
 }
 
 .search{
@@ -68,6 +67,7 @@ line-height: 51px;
 .active{
   background-color:  rgba(161, 116, 176, 1);
 }
+
 .button1{
   text-align: center;
   /* margin-top: 15%; */
@@ -80,7 +80,7 @@ Button{
 
 .button1 button{
  font-weight: 800;
- font-family: Nunito;
+ font-family: Nunito, sans-serif;
  color: rgba(0, 0, 0, 1);
  background-color: rgba(143, 20, 186, 1);
  border-radius: 10px;
@@ -102,15 +102,16 @@ Button{
   
 }
 .profile_name p{
-  font-family: Nunito;
+  font-family: Nunito, sans-serif;
   font-weight: 800;
 }
 
 .profile{
   align-content: flex-end;
   display: flex;
+  margin-top: auto;
   border-top: 1px solid black;
-width: 100%;  
+  width: 100%;
  
 }
 
